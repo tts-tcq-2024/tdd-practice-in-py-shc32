@@ -1,5 +1,3 @@
-def add(input):
-  if input:
-    return 0
-  elif input == 0:
-    return 0
+def add(a,b):
+  if a,b:
+    return a+b
