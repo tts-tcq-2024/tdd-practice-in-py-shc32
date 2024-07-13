@@ -1,1 +1,2 @@
-
+def add(input):
+  return
