@@ -4,7 +4,6 @@ def add(numbers_string):
     if not numbers_string:
         return 0
     
-    # Determine delimiter
     delimiter = ","
     if numbers_string.startswith("//"):
         custom_delimiter_match = re.match(r"//\[?(.+?)\]?\n", numbers_string)
@@ -12,15 +11,13 @@ def add(numbers_string):
             delimiter = custom_delimiter_match.group(1)
             numbers_string = numbers_string[len(custom_delimiter_match.group(0)):]
     
-    # Split numbers by delimiter or newline
     numbers = re.split(f"{delimiter}|\n", numbers_string)
     
-    # Handle negatives
     negatives = [int(num) for num in numbers if int(num) < 0]
     if negatives:
         raise Exception(f"negatives not allowed: {', '.join(map(str, negatives))}")
     
-    # Sum numbers, ignoring those > 1000
     return sum(int(num) for num in numbers if 0 <= int(num) <= 1000)
+
 
 
