@@ -3,6 +3,7 @@ def sum_of_numbers(input):
     for i in input:
         if i.isnumeric():
             sum+=int(i)
+    return sum
     
 def add(input):
     if (input == "0") or (input == ""):
