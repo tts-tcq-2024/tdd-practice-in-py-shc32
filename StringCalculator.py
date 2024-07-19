@@ -1,9 +1,7 @@
-def sum_of_numbers(input):
-    sum=0
-    for i in input:
-        if i.isnumeric():
-            sum+=int(i)
-    return sum
+import re
+
+def sum_of_numbers(str):
+    return sum(map(int, re.findall('\d+', str)))
     
 def add(input):
     if (input == "0") or (input == ""):
