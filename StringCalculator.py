@@ -6,7 +6,7 @@ def sum_of_numbers(input):
 def add(input):
     if (input == "0") or (input == ""):
         return 0
-    else
+    else:
         sum_of_numbers(input)
 
 
