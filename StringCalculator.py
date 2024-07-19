@@ -6,5 +6,5 @@ def sum_of_numbers(str):
 def add(input):
     if (input == "0") or (input == ""):
         return 0
-        
-    sum_of_numbers(input)
+    else:
+        sum_of_numbers(input)
