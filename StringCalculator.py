@@ -14,16 +14,16 @@ def add(input):
     
     return sum(numbers)
 
-def parse_numbers(input, delimiter):
-    parts = input.split('\n')
-    split_parts = [part.split(delimiter) for part in parts]
-    flattened_numbers = [int(num) for sublist in split_parts for num in sublist if num != ""]
-    return flattened_numbers
+def parse_numbers(input_string, delimiter):
+    numbers = []  # Initialize an empty list to store numbers
+    for part in input_string.split('\n'):
+        numbers.extend(part.split(delimiter))
+    return [int(num) for num in numbers if num != ""]
 
 def handle_negatives(numbers):
     negatives = [num for num in numbers if num < 0]
-#    if negatives:
-#        raise ValueError("negatives not allowed: " + ",".join(map(str, negatives)))
+    if negatives:
+        raise ValueError("negatives not allowed: " + ",".join(map(str, negatives)))
 
 def ignore_large_numbers(numbers):
     return [num for num in numbers if num <= 1000]
