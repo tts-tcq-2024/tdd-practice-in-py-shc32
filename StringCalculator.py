@@ -28,7 +28,7 @@ def identify_negatives(numbers):
         if num < 0:
             negatives.append(num)
 
-    return [negatives]
+    return negatives
 
 def report_negatives(negatives):
     if len(negatives) != 0:
