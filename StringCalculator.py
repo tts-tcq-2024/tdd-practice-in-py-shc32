@@ -9,7 +9,7 @@ def add(input):
         input = input[delimiter_index+1:]
 
     numbers = parse_numbers(input, delimiter)
-    identify_negatives(numbers)
+    negatives = identify_negatives(numbers)
     report_negatives(negatives)
     numbers = ignore_large_numbers(numbers)
     
@@ -27,6 +27,8 @@ def identify_negatives(numbers):
     for num in numbers:
         if num < 0:
             negatives.append(num)
+
+    return [negatives]
 
 def report_negatives(negatives):
     if len(negatives) != 0:
