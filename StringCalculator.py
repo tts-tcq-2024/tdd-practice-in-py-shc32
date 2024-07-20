@@ -15,12 +15,16 @@ def add(input):
     
     return sum(numbers)
 
-def parse_numbers(input_string, delimiter):
-    numbers = []  # Initialize an empty list to store numbers
-    for part in input_string.split('\n'):
-        numbers.extend(part.split(delimiter))
-    return [int(num) for num in numbers if num != ""]
+def split_input_string(input, delimiter):
+    segments = []
+    for part in input.split('\n'):
+        segments.extend(part.split(delimiter))
+    return segments
 
+def parse_numbers(input, delimiter):
+    segments = split_input_string(input, delimiter)
+    return [int(num) for num in segments if num != ""]
+    
 def identify_negatives(numbers):
 #    negatives = [num for num in numbers if num < 0]
     negatives = []
