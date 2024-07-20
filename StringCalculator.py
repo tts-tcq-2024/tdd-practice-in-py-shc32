@@ -7,7 +7,8 @@ def add(input):
         delimiter_index = input.find("\n")
         delimiter = input[2:delimiter_index]
         input = input[delimiter_index+1:]
-    
+
+    numbers = []  # Initialize an empty list to store numbers
     numbers = parse_numbers(input, delimiter)
     handle_negatives(numbers)
     numbers = ignore_large_numbers(numbers)
@@ -15,7 +16,6 @@ def add(input):
     return sum(numbers)
 
 def parse_numbers(input_string, delimiter):
-    numbers = []  # Initialize an empty list to store numbers
     for part in input_string.split('\n'):
         numbers.extend(part.split(delimiter))
     return [int(num) for num in numbers if num != ""]
