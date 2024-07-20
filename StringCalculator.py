@@ -1,16 +1,16 @@
-def add(self, input_string):
-    if input_string == "":
+def add(input):
+    if input == "":
         return 0
     
     delimiter = ","
-    if input_string.startswith("//"):
-        delimiter_index = input_string.find("\n")
-        delimiter = input_string[2:delimiter_index]
-        input_string = input_string[delimiter_index+1:]
+    if input.startswith("//"):
+        delimiter_index = input.find("\n")
+        delimiter = input[2:delimiter_index]
+        input = input[delimiter_index+1:]
     
     # Split by delimiter, commas, or new lines
     numbers = []
-    for part in input_string.split('\n'):
+    for part in input.split('\n'):
         numbers.extend(part.split(delimiter))
     
     # Filter out empty strings and convert to integers
