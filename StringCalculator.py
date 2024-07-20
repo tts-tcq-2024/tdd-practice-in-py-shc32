@@ -15,10 +15,10 @@ def add(input):
     return sum(numbers)
 
 def parse_numbers(input, delimiter):
-    numbers = []
-    for part in input.split('\n'):
-        numbers.extend(part.split(delimiter))
-    return [int(num) for num in numbers if num != ""]
+    parts = input.split('\n')
+    split_parts = [part.split(delimiter) for part in parts]
+    flattened_numbers = [int(num) for sublist in split_parts for num in sublist if num != ""]
+    return flattened_numbers
 
 def handle_negatives(numbers):
     negatives = [num for num in numbers if num < 0]
