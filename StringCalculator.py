@@ -9,6 +9,7 @@ def add(input):
         input = input[delimiter_index+1:]
 
     numbers = parse_numbers(input, delimiter)
+    negatives = []
     identify_negatives(numbers)
     numbers = ignore_large_numbers(numbers)
     
@@ -22,10 +23,11 @@ def parse_numbers(input_string, delimiter):
 
 def identify_negatives(numbers):
 #    negatives = [num for num in numbers if num < 0]
-    negatives = []
     for num in numbers:
         if num < 0:
             negatives.append(num)
+
+#def report_negatives():
 #    if negatives:
 #        raise ValueError("negatives not allowed: " + ",".join(map(str, negatives)))
 
