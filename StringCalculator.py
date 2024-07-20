@@ -22,8 +22,8 @@ def parse_numbers(input, delimiter):
 
 def handle_negatives(numbers):
     negatives = [num for num in numbers if num < 0]
-    if negatives:
-        raise ValueError("negatives not allowed: " + ",".join(map(str, negatives)))
+#    if negatives:
+#        raise ValueError("negatives not allowed: " + ",".join(map(str, negatives)))
 
 def ignore_large_numbers(numbers):
     return [num for num in numbers if num <= 1000]
