@@ -24,7 +24,7 @@ def split_input_string(input, delimiter):
 def parse_numbers(input, delimiter):
     segments = split_input_string(input, delimiter)
     return [int(num) for num in segments if num != ""]
-    
+
 def identify_negative_elements(numbers):
     negatives = []
     for num in numbers:
@@ -37,6 +37,10 @@ def report_negative_elements(negatives):
         raise ValueError("negatives not allowed: " + ",".join(map(str, negatives)))
 
 def ignore_large_numbers(numbers):
-    return [num for num in numbers if num <= 1000]
+    numbers_less_than_1000 = []
+    for num in numbers:
+        if num <= 1000:
+            numbers_less_than_1000.append(num)
+    return numbers_less_than_1000
 
 
