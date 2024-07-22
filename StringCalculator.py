@@ -23,7 +23,11 @@ def split_input_string(input, delimiter):
 
 def parse_numbers(input, delimiter):
     segments = split_input_string(input, delimiter)
-    return [int(num) for num in segments if num != ""]
+    parsed_numbers = []
+    for num in segments:
+        if num != "":
+            parsed_numbers.append(int(num))  # Convert valid segments to integers
+    return parsed_numbers
 
 def identify_negative_elements(numbers):
     negatives = []
